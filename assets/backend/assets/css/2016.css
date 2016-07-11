@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.logo-image {
+	width: 100%;
+	text-align: center;
+}
+
+.logo-image img {
+	width: 100%;
+}
+
+ #navigation .navigation-menu .active a {
+  color: #c0392b;
+}
+#navigation .navigation-menu .active a i {
+  color: #c0392b;
+}
+
+#btn-front-pc {
+		display: block;
+	}
+	
+	#btn-front-mobile {
+		display: none;
+	}

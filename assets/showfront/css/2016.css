@@ -1,0 +1,138 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+.DescriptionExcerpt {
+   background: #FFFFFF;
+  display: block;
+  /* Fallback for non-webkit */
+  display: -webkit-box;
+  max-height: 12.5rem;
+  /* Fallback for non-webkit */
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+
+@-moz-document url-prefix() {
+  .DescriptionExcerpt {
+    overflow: hidden;
+    position: relative;
+  }
+  .DescriptionExcerpt:before {
+   background: #FFFFFF;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    float: right;
+    content: '\2026';
+    margin-left: -3rem;
+    width: 3rem;
+  }
+  .DescriptionExcerpt:after {
+      content: '';
+    background: #FFFFFF;
+    position: absolute;
+    height: 0px;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+.toggle-image {
+	margin: 0 25px 0 0;
+	width: 200px;
+	display: block;
+	height: auto;
+	position: relative;
+}
+
+#index-toggle .toggle span {
+	margin-left: 220px;
+	margin-top: -130px;
+	position: absolute;
+	line-height: 26px;
+}
+
+#index-toggle .toggle.toggle-border .togglet, .toggle.toggle-border .toggleta {
+	padding: 0 15px 0 0px;
+	
+}
+
+#index-toggle .toggle .subtitle {
+	margin-top: 0px;
+	margin-left: 0px;
+	font-size: 14px;
+	font-weight: normal;
+	position: relative;
+	width: 100%;
+	
+}
+
+#index-toggle .toggle.toggle-border .togglec {
+	padding: 15px 15px 15px 36px;
+	line-height: 24px;
+}
+
+#index-toggle .toggle .more-link {
+	float: right;
+	margin-right: 20px;
+}
+	
+#index-toggle .panel-default > .panel-heading {
+	background-color: #fff;
+}
+	
+#index-toggle .panel-default > .panel-heading + .panel-collapse > .panel-body {
+	border-top-color: #fff;
+}
+
+#index-toggle .panel-group .panel {
+	margin-bottom: 20px;
+}
+
+#index-toggle .panel-heading {
+	padding: 0px;
+}
+
+#index-toggle .panel span {
+	margin-left: 220px;
+	margin-top: -130px;
+	position: absolute;
+	line-height: 26px;
+	color: #444;
+	font-weight: 600;
+	padding-right: 20px;
+	font-size: 16px;
+}
+
+#index-toggle .panel .subtitle {
+	margin-top: 0px;
+	margin-left: 0px;
+	font-size: 14px;
+	font-weight: normal;
+	position: relative;
+	width: 100%;
+}
+
+#index-toggle .panel .more-link {
+	float: right;
+	margin-right: 20px;
+	color: #c0392b;
+}
+
+#index-toggle .panel .more-link:hover {
+	color: #000;
+}
+
+#index-toggle .panel-body {
+	line-height: 24px;
+}
+
+/*tech*/
+#tech-post .pagination {
+	text-align: center;
+}

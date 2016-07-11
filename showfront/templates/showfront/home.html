@@ -1,0 +1,349 @@
+{% load staticfiles  %}
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="ITLab-IoT team | NCKU" />
+    <link rel="shortcut icon" href="{% static "showfront/images/favicon.ico" %}">
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="{% static "showfront/css/bootstrap.css" %}" type="text/css" />
+	<link rel="stylesheet" href="{% static "showfront/style.css" %}" type="text/css" />
+	<link rel="stylesheet" href="{% static "showfront/css/dark.css" %}" type="text/css" />
+	<link rel="stylesheet" href="{% static "showfront/css/font-icons.css" %}" type="text/css" />
+	<link rel="stylesheet" href="{% static "showfront/css/animate.css" %}" type="text/css" />
+	<link rel="stylesheet" href="{% static "showfront/css/magnific-popup.css" %}" type="text/css" />
+
+	<link rel="stylesheet" href="{% static "showfront/css/responsive.css" %}" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Here goes your colors.css
+	============================================= -->
+	<link rel="stylesheet" href="{% static "showfront/css/colors.css" %}" type="text/css" />
+    
+      <!-- custome css
+	============================================= -->
+	<link rel="stylesheet" href="{% static "showfront/css/2016.css" %}" type="text/css" />
+    <link rel="stylesheet" href="{% static "showfront/css/basic.css" %}" type="text/css" />
+    
+    
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="{% static "showfront/js/jquery.js" %}"></script>
+	<script type="text/javascript" src="{% static "showfront/js/plugins.js" %}"></script>
+
+	<!-- Document Title
+	============================================= -->
+	<title>ITLab-IoT team | NCKU</title>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="full-header">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- Logo
+					============================================= -->
+					<div id="logo">
+						<a href="{% url "showfront:home" %}" class="standard-logo" data-dark-logo="{% static "showfront/images/logo-dark.png" %}"><img src="{% static "showfront/images/logo.png" %}" alt="NCKU Logo"></a>
+						<a href="{% url "showfront:home" %}" class="retina-logo" data-dark-logo="{% static "showfront/images/logo-dark@2x.png" %}"><img src="{% static "showfront/images/logo@2x.png" %}" alt="NCKU Logo"></a>
+					</div><!-- #logo end -->
+
+					<!-- Primary Navigation
+					============================================= -->
+					<nav id="primary-menu">
+
+						<ul>
+							<li class="current"><a href="{% url "showfront:home" %}"><div>Home</div></a>
+							
+							</li>
+							<li><a href="{% url "showfront:technology" %}"><div>Technology</div></a>
+							
+							</li>
+                            
+                            <li><a href="{% url "backend:backend_login" %}"><div>Admin</div></a>
+							
+							</li>
+                            
+                            <li><a href="{% url "showfront:about" %}"><div>About Us</div></a>
+							
+							</li>
+                            
+							
+						</ul>
+
+					
+
+						
+
+					</nav><!-- #primary-menu end -->
+
+				</div>
+
+			</div>
+
+		</header><!-- #header end -->
+
+		<section id="slider" class="slider-parallax swiper_wrapper clearfix">
+
+			<div class="swiper-container swiper-parent">
+				<div class="swiper-wrapper">
+                <div class="swiper-slide dark" style="background-image: url('{% static "showfront/images/slider/swiper/health.jpg" %}'); background-position: center top;">
+						<div class="container clearfix">
+							<div class="slider-caption">
+								<h2 data-caption-animate="fadeInUp">Health</h2>
+								<p data-caption-animate="fadeInUp" data-caption-delay="200">Simple Ways to take better care of Yourself.</p>
+							</div>
+						</div>
+					</div>
+                    
+					<div class="swiper-slide dark" style="background-image: url('{% static "showfront/images/slider/swiper/tech.jpg" %}');">
+						<div class="container clearfix">
+							<div class="slider-caption slider-caption-center">
+								<h2 data-caption-animate="fadeInUp">Industry</h2>
+								<p data-caption-animate="fadeInUp" data-caption-delay="200">New Innovations that could change the World.</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="swiper-slide" style="background-image: url('{% static "showfront/images/slider/swiper/energy.jpg" %}'); background-position: center top;">
+						<div class="container clearfix">
+							<div class="slider-caption">
+								<h2 data-caption-animate="fadeInUp">Energy</h2>
+								<p data-caption-animate="fadeInUp" data-caption-delay="200">but Really, What Is Energy? </p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="slider-arrow-left"><i class="icon-angle-left"></i></div>
+				<div id="slider-arrow-right"><i class="icon-angle-right"></i></div>
+				<div id="slide-number"><div id="slide-number-current"></div><span>/</span><div id="slide-number-total"></div></div>
+			</div>
+
+			<script>
+				jQuery(document).ready(function($){
+					var swiperSlider = new Swiper('.swiper-parent',{
+						paginationClickable: false,
+						slidesPerView: 1,
+						grabCursor: true,
+						loop: true,
+                        autoplay: 10000,
+						onSwiperCreated: function(swiper){
+							$('[data-caption-animate]').each(function(){
+								var $toAnimateElement = $(this);
+								var toAnimateDelay = $(this).attr('data-caption-delay');
+								var toAnimateDelayTime = 0;
+								if( toAnimateDelay ) { toAnimateDelayTime = Number( toAnimateDelay ) + 750; } else { toAnimateDelayTime = 750; }
+								if( !$toAnimateElement.hasClass('animated') ) {
+									$toAnimateElement.addClass('not-animated');
+									var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+									setTimeout(function() {
+										$toAnimateElement.removeClass('not-animated').addClass( elementAnimation + ' animated');
+									}, toAnimateDelayTime);
+								}
+							});
+						},
+						onSlideChangeStart: function(swiper){
+							$('#slide-number-current').html(swiper.activeIndex + 1);
+							$('[data-caption-animate]').each(function(){
+								var $toAnimateElement = $(this);
+								var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+								$toAnimateElement.removeClass('animated').removeClass(elementAnimation).addClass('not-animated');
+							});
+						},
+						onSlideChangeEnd: function(swiper){
+							$('#slider .swiper-slide').each(function(){
+								if($(this).find('video').length > 0) { $(this).find('video').get(0).pause(); }
+							});
+							$('#slider .swiper-slide:not(".swiper-slide-active")').each(function(){
+								if($(this).find('video').length > 0) {
+									if($(this).find('video').get(0).currentTime != 0 ) $(this).find('video').get(0).currentTime = 0;
+								}
+							});
+							if( $('#slider .swiper-slide.swiper-slide-active').find('video').length > 0 ) { $('#slider .swiper-slide.swiper-slide-active').find('video').get(0).play(); }
+
+							$('#slider .swiper-slide.swiper-slide-active [data-caption-animate]').each(function(){
+								var $toAnimateElement = $(this);
+								var toAnimateDelay = $(this).attr('data-caption-delay');
+								var toAnimateDelayTime = 0;
+								if( toAnimateDelay ) { toAnimateDelayTime = Number( toAnimateDelay ) + 300; } else { toAnimateDelayTime = 300; }
+								if( !$toAnimateElement.hasClass('animated') ) {
+									$toAnimateElement.addClass('not-animated');
+									var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+									setTimeout(function() {
+										$toAnimateElement.removeClass('not-animated').addClass( elementAnimation + ' animated');
+									}, toAnimateDelayTime);
+								}
+							});
+						}
+					});
+
+					$('#slider-arrow-left').on('click', function(e){
+						e.preventDefault();
+						swiperSlider.swipePrev();
+					});
+
+					$('#slider-arrow-right').on('click', function(e){
+						e.preventDefault();
+						swiperSlider.swipeNext();
+					});
+
+					$('#slide-number-current').html(swiperSlider.activeIndex + 1);
+					$('#slide-number-total').html(swiperSlider.slides.length);
+				});
+			</script>
+
+		</section>
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix" id="index-toggle">
+                
+              	<div class="panel-group nobottommargin" id="accordion">
+						  <div class="panel panel-default">
+							<div class="panel-heading">
+							  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+							  <div class="toggle-image"><img class="image_fade" src="{% static "showfront/images/blog/small/health.jpg" %}"></div><span>Health <br>
+                            <span class="subtitle">
+                             Nowdays people apply Internet of Things to the medical field. Patients and providers both stand to benefit from IoT carving out a bigger presence in healthcare. Some uses of healthcare IoT are mobile medical applications or wearable devices that allow patients to capture their health data. Hospitals use IoT to keep tabs on the location of medical devices, personnel and patients.<font class="more-link">Read More</font>
+                              
+                            </span>
+                        
+                            </span>
+							</a>
+							</div>
+							<div id="collapseOne" class="panel-collapse collapse in">
+							  <div class="panel-body">
+								Chronic diseases, aging population, health care and medical resources and other issues that those requiring constant supervision have become the focus of attention of the community, the wearable medical devices have become the key to solve these problems.Integrating IoT features into medical devices greatly improves the quality and effectiveness of service.
+							  </div>
+							</div>
+						  </div>
+                           
+						  <div class="panel panel-default">
+							<div class="panel-heading">
+							  <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+							   <div class="toggle-image"><img class="image_fade" src="{% static "showfront/images/blog/small/tech.jpg" %}"></div><span>Industry <br>
+                            <span class="subtitle">
+                             Internet of Things in industry has been heralded primarily as a way to improve operational efficiency. In the future, the Industrial Internet of Things will boost companies' revenues by increasing production and creating new hybrid business models, exploit intelligent technologies to fuel innovation and transform their workforce.<font class="more-link">Read More</font>
+                              
+                            </span>
+                        
+                            </span>
+							</a>
+							</div>
+							<div id="collapseTwo" class="panel-collapse collapse">
+							  <div class="panel-body">
+								The highly anticipated Industry 4.0 revolution is already underway reshaping manufacturing processes and the Industrial Internet of Things is a primary catalyst for this transformation. With the industrial automation solutions empowered by the Internet of Things, manufacturing production facilities and products themselves can be outfitted with computing hardware and connected using standard networking means. This allows separate parts of a production line communicate with each other in near real time and makes the entire manufacturing process much easier to monitor and control.
+							  </div>
+							</div>
+						  </div>
+						  <div class="panel panel-default">
+							<div class="panel-heading">
+							  <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+							   <div class="toggle-image"><img class="image_fade" src="{% static "showfront/images/blog/small/energy.jpg" %}"></div><span>Energy <br>
+                            <span class="subtitle">
+                             loT will empower users with actionable insight to better understand their energy consumption in real-time, down to the small appliance level — to create personalized recommendations for users based on data gathered.In the future, the Internet of Things will greatly change the way we consume energy. <font class="more-link">Read More</font>
+                              
+                            </span>
+                        
+                            </span>
+							</a>
+							</div>
+							<div id="collapseThree" class="panel-collapse collapse">
+							  <div class="panel-body">
+								While trimming home energy use can bring big energy reductions, the true future lies in an integrated system, a smart grid. As of right now, the flow of energy in a normal grid is one way, with energy flowing from power plants to homes and businesses. With a smart grid, it would flow multiple ways — allowing people to control their own energy, including selling the energy they make.  A smart grid would allow customers to preset how and when their home or business uses energy, including the ability to control by way of smartphones.
+							  </div>
+							</div>
+						  </div>
+						</div>
+                        
+                
+
+					<div class="clear"></div>
+
+				</div>
+
+				
+<script type="text/javascript">  
+
+    jQuery(document).ready(function ($) {
+
+       $('#collapseOne').collapse("hide");
+    });      
+
+</script>
+			
+
+		
+
+				
+
+				
+
+			</div>
+
+		</section><!-- #content end -->
+
+		<!-- Footer
+		============================================= -->
+		<footer id="footer" class="dark">
+
+			
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					<div class="col_half">
+						Copyrights &copy; 2016 All Rights Reserved by ITLab-IoT team | NCKU.<br>
+						
+
+					
+
+				    </div>
+                    <div class="col_half col_last tright">
+						
+                        <i class="icon-envelope2"></i> steven.ncku@gmail.com
+						
+					</div>
+			</div><!-- #copyrights end -->
+
+		</footer><!-- #footer end -->
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="{% static "showfront/js/functions.js" %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,744 @@
+{% load staticfiles  %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="ITLab-IoT team | NCKU">
+        <meta name="author" content="ITLab-IoT team | NCKU">
+
+        <link rel="shortcut icon" href="{% static "backend/assets/images/favicon.ico" %}">
+
+        <title>ITLab-IoT team | NCKU</title>
+
+        <link href="{% static "backend/assets/css/bootstrap.min.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "backend/assets/css/core.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "backend/assets/css/components.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "backend/assets/css/icons.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "backend/assets/css/pages.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "backend/assets/css/menu.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "backend/assets/css/responsive.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "backend/assets/css/2016.css" %}" rel="stylesheet" type="text/css" />
+
+        <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="{% static "backend/assets/js/modernizr.min.js" %}"></script>
+
+
+    </head>
+
+
+    <body>
+
+
+        <!-- Navigation Bar-->
+        <header id="topnav">
+            <div class="topbar-main">
+                <div class="container">
+
+                    <!-- Logo container-->
+                    <div class="logo">
+                        <a href="{% url "backend:backend_index" %}" class="logo"><img src="{% static "backend/images/logo-dark.png" %}" alt=""/></a>
+                    </div>
+                    <!-- End Logo container-->
+
+                    <div class="menu-extras">
+
+                       <ul class="nav navbar-nav navbar-right pull-right">
+                        
+                          <li id="btn-front-pc">
+                                <a href="{% url "backend:backend_index" %}" class="waves-effect waves-light" aria-expanded="true">
+                                    <i class="icon-home"></i>
+                                </a>
+
+                            </li>
+
+                             <li class="dropdown">
+                                <a href="" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true"><img src="{% static "backend/assets/images/users/avatar-1.jpg" %}" alt="user-img" class="img-circle"> </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{% url "backend:backend_login" %}"><i class="ti-power-off m-r-5"></i> Logout</a></li>
+                                </ul>
+                            </li>
+
+                        
+                        </ul>
+
+                        <div class="menu-item">
+                            <!-- Mobile menu toggle-->
+                            <a class="navbar-toggle">
+                                <div class="lines">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </a>
+                            <!-- End mobile menu toggle-->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- End topbar -->
+
+
+            <!-- Navbar Start -->
+            <div class="navbar-custom">
+                <div class="container">
+                <div id="navigation">
+                    <!-- Navigation Menu-->
+                    <ul class="navigation-menu">
+                        <li>
+                            <a href="{% url "backend:backend_index" %}"><i class="md md-cloud-queue"></i>IoT Device</a>
+                          
+                        </li>
+                        <li class="active">
+                            <a href="{% url "backend:backend_api" %}"><i class="md md-settings-applications"></i>API</a>
+                           
+                        </li>
+
+
+                        <li>
+                            <a href="{% url "backend:backend_account" %}"><i class="md md-account-child"></i>Accounts</a>
+                           
+                        </li>
+                       
+
+               
+                    </ul>
+                    <!-- End navigation menu        -->
+                </div>
+            </div>
+            </div>
+        </header>
+        <!-- End Navigation Bar-->
+
+
+        <!-- =======================
+             ===== START PAGE ======
+             ======================= -->
+
+        <div class="wrapper">
+            <div class="container">
+
+                <!-- Page-Title -->
+                <div class="row m-b-20">
+                    <div class="col-sm-12">
+                       
+                        <h4 class="page-title">API</h4>
+                       
+
+                    </div>
+                </div>
+                <!-- Page-Title -->
+
+
+             
+
+
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="tabs-vertical-env">
+                            <ul class="nav tabs-vertical">
+                                <li class="active">
+                                    <a href="#api-1" data-toggle="tab" aria-expanded="true">API-1</a>
+                                </li>
+                                <li class="">
+                                    <a href="#api-2" data-toggle="tab" aria-expanded="false">API-2</a>
+                                </li>
+                                <li class="">
+                                    <a href="#api-3" data-toggle="tab" aria-expanded="false">API-3</a>
+                                </li>
+                                <li class="">
+                                    <a href="#api-4" data-toggle="tab" aria-expanded="false">API-4</a>
+                                </li>
+                                <li class="">
+                                    <a href="#api-5" data-toggle="tab" aria-expanded="false">API-5</a>
+                                </li>
+                                <li class="">
+                                    <a href="#api-6" data-toggle="tab" aria-expanded="false">API-6</a>
+                                </li>
+                                <li class="">
+                                    <a href="#api-7" data-toggle="tab" aria-expanded="false">API-7</a>
+                                </li>
+                                <li class="">
+                                    <a href="#api-8" data-toggle="tab" aria-expanded="false">API-8</a>
+                                </li>
+                                <li class="">
+                                    <a href="#api-9" data-toggle="tab" aria-expanded="false">API-9</a>
+                                </li>
+                                <li class="">
+                                    <a href="#api-10" data-toggle="tab" aria-expanded="false">API-10</a>
+                                </li>
+                                
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="api-1">
+                                    <p>  
+                                    <div class="row">
+                                <div class="col-lg-12">
+                                    
+                                    
+                                    <div class="p-20">
+                                        <table class="table table-striped m-0">
+
+                                            <thead>
+                                                <tr>
+                                                    <th>API name</th>
+                                                    <th>Register</th>
+                                                    
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Explanation</th>
+                                                    <td>Send the device's information to server for registering</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">URL</th>
+                                                    <td><a href="#fakelink">https://iot.ee.ncku.edu.tw/requesttoken/</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Method</th>
+                                                    <td>POST</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Parameter required</th>
+                                                    <td>Machine ID: machine mac address <br> User Information: user id</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Response</th>
+                                                    <td>JSON format <br> {<br>
+                                                        "return_code":"200" ,<br>
+                                                        "token":token string <br>
+                                                        } <br>
+                                                        200 means OK.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    </div>
+                                    </div>
+                                    </p>
+                                    
+                                    
+                                </div>
+                                <div class="tab-pane" id="api-2">
+                                     <p>  
+                                    <div class="row">
+                                <div class="col-lg-12">
+                                    
+                                    
+                                    <div class="p-20">
+                                        <table class="table table-striped m-0">
+
+                                            <thead>
+                                                <tr>
+                                                    <th>API name</th>
+                                                    <th>Refresh token</th>
+                                                    
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Explanation</th>
+                                                    <td>Send request to refresh token to the server</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">URL</th>
+                                                    <td><a href="#fakelink">https://iot.ee.ncku.edu.tw/refreshtoken/</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Method</th>
+                                                    <td>POST</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Parameter required</th>
+                                                    <td>Token: token strings</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Return</th>
+                                                    <td>JSON format <br> {<br>
+                                                        "return_code":"200" ,<br>
+                                                        "token":token string <br>
+                                                        } <br>
+                                                        200 means OK.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    </div>
+                                    </div>
+                                    </p>
+                                </div>
+                                <div class="tab-pane" id="api-3">
+                                    <p>
+                                    <div class="row">
+                                <div class="col-lg-12">
+
+
+                                    <div class="p-20">
+                                        <table class="table table-striped m-0">
+
+                                            <thead>
+                                                <tr>
+                                                    <th>API name</th>
+                                                    <th>Update priority</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Explanation</th>
+                                                    <td>Send request to update priority of service to the server</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">URL</th>
+                                                    <td><a href="#fakelink">https://iot.ee.ncku.edu.tw/updatepriority/</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Method</th>
+                                                    <td>POST</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Parameter required</th>
+                                                    <td>Token: token strings <br> Update priority : new priority number</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Response</th>
+                                                    <td>JSON format <br> {<br>
+                                                        "return_code":"200"<br>
+                                                         } <br>
+                                                        200 means OK.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    </div>
+                                    </div>
+                                    </p>
+
+
+                                </div>
+                                <div class="tab-pane " id="api-4">
+                                    <p>
+                                    <div class="row">
+                                <div class="col-lg-12">
+
+
+                                    <div class="p-20">
+                                        <table class="table table-striped m-0">
+
+                                            <thead>
+                                                <tr>
+                                                    <th>API name</th>
+                                                    <th>Update service type</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Explanation</th>
+                                                    <td>Send request to update the type of service to the server</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">URL</th>
+                                                    <td><a href="#fakelink">https://iot.ee.ncku.edu.tw/updateservicetype/</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Method</th>
+                                                    <td>POST</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Parameter required</th>
+                                                    <td>Token: token strings <br> Update service type : new service type </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Response</th>
+                                                    <td>JSON format <br> {<br>
+                                                        "return_code":"200"<br>
+                                                        } <br>
+                                                        200 means OK.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    </div>
+                                    </div>
+                                    </p>
+
+
+                                </div>
+
+                                <div class="tab-pane " id="api-5">
+                                    <p>
+                                    <div class="row">
+                                <div class="col-lg-12">
+
+
+                                    <div class="p-20">
+                                        <table class="table table-striped m-0">
+
+                                            <thead>
+                                                <tr>
+                                                    <th>API name</th>
+                                                    <th>Update security level</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Explanation</th>
+                                                    <td>Send request to update security level of service to the server</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">URL</th>
+                                                    <td><a href="#fakelink">https://iot.ee.ncku.edu.tw/updatesecuritylevel/</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Method</th>
+                                                    <td>POST</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Parameter required</th>
+                                                    <td>Token: token strings <br> Update security level : new security level </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Response</th>
+                                                    <td>JSON format <br> {<br>
+                                                        "return_code":"200"<br>
+                                                        } <br>
+                                                        200 means OK.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    </div>
+                                    </div>
+                                    </p>
+
+
+                                </div>
+                                <div class="tab-pane " id="api-6">
+                                    <p>
+                                    <div class="row">
+                                <div class="col-lg-12">
+
+
+                                    <div class="p-20">
+                                        <table class="table table-striped m-0">
+
+                                            <thead>
+                                                <tr>
+                                                    <th>API name</th>
+                                                    <th>Get service priority</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Explanation</th>
+                                                    <td>Send request to get the service priority from the server </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">URL</th>
+                                                    <td><a href="#fakelink">https://iot.ee.ncku.edu.tw/priority/</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Method</th>
+                                                    <td>GET</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Parameter required</th>
+                                                    <td> Token: token strings <br> </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Response</th>
+                                                    <td>JSON format <br> {<br>
+                                                        "return_code":"200"<br>
+                                                        } <br>
+                                                        200 means OK.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    </div>
+                                    </div>
+                                    </p>
+
+
+                                </div>
+
+                                <div class="tab-pane " id="api-7">
+                                    <p>
+                                    <div class="row">
+                                <div class="col-lg-12">
+
+
+                                    <div class="p-20">
+                                        <table class="table table-striped m-0">
+
+                                            <thead>
+                                                <tr>
+                                                    <th>API name</th>
+                                                    <th>Get service type</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Explanation</th>
+                                                    <td>Send request to get the service type from the server</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">URL</th>
+                                                    <td><a href="#fakelink">https://iot.ee.ncku.edu.tw/servicetype/</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Method</th>
+                                                    <td>GET</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Parameter required</th>
+                                                    <td> Token: token strings <br> </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Response</th>
+                                                    <td>JSON format <br> {<br>
+                                                        "return_code":"200"<br>
+                                                        } <br>
+                                                        200 means OK.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    </div>
+                                    </div>
+                                    </p>
+
+
+                                </div>
+
+                                <div class="tab-pane" id="api-8">
+                                    <p>
+                                    <div class="row">
+                                <div class="col-lg-12">
+
+
+                                    <div class="p-20">
+                                        <table class="table table-striped m-0">
+
+                                            <thead>
+                                                <tr>
+                                                    <th>API name</th>
+                                                    <th>Get security level</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Explanation</th>
+                                                    <td>Send request to get the security level from the server</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">URL</th>
+                                                    <td><a href="#fakelink">https://iot.ee.ncku.edu.tw/securitylevel/</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Method</th>
+                                                    <td>GET</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Parameter required</th>
+                                                    <td>Token: token strings</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Response</th>
+                                                    <td>JSON format <br> {<br>
+                                                        "return_code":"200"<br>
+                                                        } <br>
+                                                        200 means OK.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    </div>
+                                    </div>
+                                    </p>
+
+                                </div>
+                                <div class="tab-pane " id="api-9">
+                                    <p>
+                                    <div class="row">
+                                <div class="col-lg-12">
+
+
+                                    <div class="p-20">
+                                        <table class="table table-striped m-0">
+
+                                            <thead>
+                                                <tr>
+                                                    <th>API name</th>
+                                                    <th>Send sensor data</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Explanation</th>
+                                                    <td>Send the sensor data to server </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">URL</th>
+                                                    <td><a href="#fakelink">https://iot.ee.ncku.edu.tw/sensor/</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Method</th>
+                                                    <td>POST</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Parameter required</th>
+                                                    <td>Token: token strings <br> Node_latitude: node latitude<br>
+                                                    Node_longitude: node longitude <br> Node_heart_rate: node latitude<br>
+                                                     Node_energy_state: node energy state <br>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Response</th>
+                                                    <td>JSON format <br> {<br>
+                                                        "return_code":"200"<br>
+                                                        } <br>
+                                                        200 means OK.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    </div>
+                                    </div>
+                                    </p>
+
+
+                                </div>
+
+                                <div class="tab-pane" id="api-10">
+                                    <p>
+                                    <div class="row">
+                                <div class="col-lg-12">
+
+
+                                    <div class="p-20">
+                                        <table class="table table-striped m-0">
+
+                                            <thead>
+                                                <tr>
+                                                    <th>API name</th>
+                                                    <th>Upload bulk-data file</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Explanation</th>
+                                                    <td>Send bulk-data file gathered by device to the server</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">URL</th>
+                                                    <td><a href="#fakelink">https://iot.ee.ncku.edu.tw/file/</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Method</th>
+                                                    <td>POST</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Parameter required</th>
+                                                    <td>Token: token strings <br> File: bulk-data file</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Response</th>
+                                                    <td>JSON format <br> {<br>
+                                                        "return_code":"200"<br>
+                                                        } <br>
+                                                        200 means OK.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    </div>
+                                    </div>
+                                    </p>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>  <!-- end row -->
+
+
+
+          
+
+
+
+
+                <!-- Footer -->
+                <footer class="footer text-right">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                2016 © ITLab-IoT team | NCKU.
+                            </div>
+                            <div class="col-xs-6">
+                                <ul class="pull-right list-inline m-b-0">
+                                    
+                                    <li>
+                                        <i class="fa fa-envelope-o"></i> steven.ncku@gmail.com
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End Footer -->
+
+            </div> <!-- end container -->
+        </div>
+        <!-- End wrapper -->
+
+
+
+        <!-- jQuery  -->
+        <script src="{% static "backend/assets/js/jquery.min.js" %}"></script>
+        <script src="{% static "backend/assets/js/bootstrap.min.js" %}"></script>
+        <script src="{% static "backend/assets/js/detect.js" %}"></script>
+        <script src="{% static "backend/assets/js/fastclick.js" %}"></script>
+        <script src="{% static "backend/assets/js/jquery.slimscroll.js" %}"></script>
+        <script src="{% static "backend/assets/js/jquery.blockUI.js" %}"></script>
+        <script src="{% static "backend/assets/js/waves.js" %}"></script>
+        <script src="{% static "backend/assets/js/wow.min.js" %}"></script>
+        <script src="{% static "backend/assets/js/jquery.nicescroll.js" %}"></script>
+        <script src="{% static "backend/assets/js/jquery.scrollTo.min.js" %}"></script>
+
+        <script src="{% static "backend/assets/js/jquery.core.js" %}"></script>
+        <script src="{% static "backend/assets/js/jquery.app.js" %}"></script>
+
+    </body>
+</html>

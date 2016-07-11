@@ -1,0 +1,158 @@
+{% load staticfiles  %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="ITLab-IoT team | NCKU">
+		<meta name="author" content="ITLab-IoT team | NCKU">
+
+		<link rel="shortcut icon" href="{% static "backend/assets/images/favicon.ico" %}">
+
+		<title>ITLab-IoT team | NCKU</title>
+
+		<link href="{% static "backend/assets/css/bootstrap.min.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "backend/assets/css/core.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "backend/assets/css/components.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "backend/assets/css/icons.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "backend/assets/css/pages.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "backend/assets/css/responsive.css" %}" rel="stylesheet" type="text/css" />
+         <link href="{% static "backend/assets/css/2016.css" %}" rel="stylesheet" type="text/css" />
+
+        <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="{% static "backend/assets/js/modernizr.min.js" %}"></script>
+
+	</head>
+	<body>
+
+        <div class="animationload">
+            <div class="loader"></div>
+        </div>
+
+		<div class="account-pages"></div>
+		<div class="clearfix"></div>
+		
+		<div class="wrapper-page">
+			<div class="card-box">
+				<div class="panel-heading logo-image"> <a href="{% url "showfront:home" %}"><img src="{% static "backend/images/logo-lg.png" %}" alt=""/></a> </div>
+
+				<div class="panel-body">
+					<form class="form-horizontal m-t-20" action="{% url "backend:backend_index" %}">
+
+						<div class="form-group ">
+							<div class="col-xs-12">
+								<input class="form-control" type="text" required="" placeholder="Username">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-xs-12">
+								<input class="form-control" type="password" required="" placeholder="Password">
+							</div>
+						</div>
+
+					
+
+					  <div class="form-group text-center m-t-40">
+							<div class="col-xs-12">
+								<button class="btn btn-warning btn-block btn-lg text-uppercase waves-effect waves-light" type="submit">
+									Log In
+								</button>
+							</div>
+						</div>
+
+						<div class="form-group m-t-20 m-b-0">
+							<div class="col-sm-12">
+								<a href="page-recoverpw.html" class="text-dark" data-toggle="modal" data-target="#con-close-modal"><i class="fa fa-lock m-r-5"></i> Forgot your password?</a>
+							</div>
+						</div>
+						
+						<div class="form-group m-t-20 m-b-0">
+							<div class="col-sm-12 text-center">
+								<h4><b>Sign in with</b></h4>
+							</div>
+						</div>
+						
+						<div class="form-group m-b-0 text-center">
+							<div class="col-sm-12" id="social-login">
+								<button type="button" class="btn w-lg btn-facebook waves-effect waves-light m-t-20">
+		                           <i class="fa fa-facebook m-r-5"></i> Facebook
+		                        </button>
+
+		                     
+
+	                          <button type="button" class="btn w-lg btn-googleplus waves-effect waves-light m-t-20">
+		                           <i class="fa fa-google-plus m-r-5"></i> Google+
+		                        </button>
+							</div>
+						</div>
+					</form>
+
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<p>
+						Copyrights &copy; 2016 All Rights Reserved <br>ITLab-IoT team | NCKU
+					</p>
+				</div>
+			</div>
+
+		</div>
+        
+                         <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h4 class="modal-title">Forgot Your Password</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                           
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label for="field-3" class="control-label">Email</label>
+                                                        <input type="text" class="form-control" id="field-3" placeholder="xxxxxx@mail.com">
+                                                        <span class="help-block"><small></small>enter your email address and we'll send you the password</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                      
+                                        </div>
+                                        <div class="modal-footer">
+                                        
+                                            <button type="button" class="btn btn-success waves-effect waves-light">Send</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- /.modal -->
+
+		<script>
+			var resizefunc = [];
+		</script>
+
+		<!-- jQuery  -->
+        <script src="{% static "backend/assets/js/jquery.min.js" %}"></script>
+        <script src="{% static "backend/assets/js/bootstrap.min.js" %}"></script>
+        <script src="{% static "backend/assets/js/detect.js" %}"></script>
+        <script src="{% static "backend/assets/js/fastclick.js" %}"></script>
+        <script src="{% static "backend/assets/js/jquery.slimscroll.js" %}"></script>
+        <script src="{% static "backend/assets/js/jquery.blockUI.js" %}"></script>
+        <script src="{% static "backend/assets/js/waves.js" %}"></script>
+        <script src="{% static "backend/assets/js/wow.min.js" %}"></script>
+        <script src="{% static "backend/assets/js/jquery.nicescroll.js" %}"></script>
+        <script src="{% static "backend/assets/js/jquery.scrollTo.min.js" %}"></script>
+
+
+        <script src="{% static "backend/assets/js/jquery.core.js" %}"></script>
+        <script src="{% static "backend/assets/js/jquery.app.js" %}"></script>
+
+	</body>
+</html>

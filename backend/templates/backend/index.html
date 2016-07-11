@@ -1,0 +1,350 @@
+{% load staticfiles  %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="ITLab-IoT team | NCKU">
+        <meta name="author" content="ITLab-IoT team | NCKU">
+
+        <link rel="shortcut icon" href="{% static "backend/assets/images/favicon.ico" %}">
+
+        <title>ITLab-IoT team | NCKU</title>
+
+        <link href="{% static "backend/assets/css/bootstrap.min.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "backend/assets/css/core.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "backend/assets/css/components.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "backend/assets/css/icons.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "backend/assets/css/pages.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "backend/assets/css/menu.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "backend/assets/css/responsive.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "backend/assets/css/2016.css" %}" rel="stylesheet" type="text/css" />
+
+        <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="{% static "backend/assets/js/modernizr.min.js" %}"></script>
+
+
+    </head>
+
+
+    <body>
+
+
+        <!-- Navigation Bar-->
+        <header id="topnav">
+            <div class="topbar-main">
+                <div class="container">
+
+                    <!-- Logo container-->
+                    <div class="logo">
+                        <a href="{% url "backend:backend_index" %}" class="logo"><img src="{% static "backend/images/logo-dark.png" %}" alt=""/></a>
+                    </div>
+                    <!-- End Logo container-->
+
+                    <div class="menu-extras">
+
+                        <ul class="nav navbar-nav navbar-right pull-right">
+
+                            <li id="btn-front-pc">
+                                <a href="{% url "backend:backend_index" %}" class="waves-effect waves-light" aria-expanded="true">
+                                    <i class="icon-home"></i>
+                                </a>
+
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true"><img src="{% static "backend/assets/images/users/avatar-1.jpg" %}" alt="user-img" class="img-circle"> </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{% url "backend:backend_login" %}"><i class="ti-power-off m-r-5"></i> Logout</a></li>
+                                </ul>
+                            </li>
+
+                        
+                        </ul>
+
+                        <div class="menu-item">
+                            <!-- Mobile menu toggle-->
+                            <a class="navbar-toggle">
+                                <div class="lines">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </a>
+                            <!-- End mobile menu toggle-->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- End topbar -->
+
+
+            <!-- Navbar Start -->
+            <div class="navbar-custom">
+                <div class="container">
+                <div id="navigation">
+                    <!-- Navigation Menu-->
+                    <ul class="navigation-menu">
+                        <li class="active">
+                            <a href="{% url "backend:backend_index" %}"><i class="md md-cloud-queue"></i>IoT Device</a>
+                          
+                        </li>
+                        <li>
+                            <a href="{% url "backend:backend_api" %}"><i class="md md-settings-applications"></i>API</a>
+                           
+                        </li>
+
+
+                        <li>
+                            <a href="{% url "backend:backend_account" %}"><i class="md md-account-child"></i>Accounts</a>
+                           
+                        </li>
+                       
+
+               
+                    </ul>
+                    <!-- End navigation menu        -->
+                </div>
+            </div>
+            </div>
+        </header>
+        <!-- End Navigation Bar-->
+
+
+        <!-- =======================
+             ===== START PAGE ======
+             ======================= -->
+
+        <div class="wrapper">
+            <div class="container">
+
+                <!-- Page-Title -->
+                <div class="row m-b-20">
+                    <div class="col-sm-12">
+                       
+                        <h4 class="page-title">IoT Device Status</h4>
+                       
+
+                    </div>
+                </div>
+                <!-- Page-Title -->
+
+
+   <div class="row">
+                    <div class="col-lg-12">
+                        <div class="tabs-vertical-env">
+                            <ul class="nav tabs-vertical">
+                                <li class="active">
+                                    <a href="#d-1" data-toggle="tab" aria-expanded="true">Device</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="d-1">
+                                    <p>  
+                                    <div class="row">
+                                <div class="col-lg-12">
+                                    <h4 class="m-t-0 header-title"><b>Device Info:</b></h4>
+                                    <div class="p-20">
+                                        <table class="table m-0">
+
+                                            <thead>
+                                                <tr>
+                                                    <th>Type</th>
+                                                    <th>Hardware ID</th>
+                                                    <th>Location</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Nordic</th>
+                                                    <td>{{ node_info.id }}</td>
+                                                    {% if node_data  %}
+                                                    <td>({{ node_data.latitude }},{{ node_data.longitude }})</td>
+                                                    {% else %}
+                                                    <td>N/A</td>
+                                                    {% endif %}
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                     <h4 class="m-t-0 header-title"><b>Token Info:</b></h4>
+                                    <div class="p-20">
+                                        <table class="table table-striped m-0">
+
+                                            <thead>
+                                                <tr>
+                                                    <th>Token ID</th>
+                                                    <th>Priority</th>
+                                                    <th>Time Limit</th>
+                                                    <th>Service Type</th>
+                                                    <th>Security Level</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>{{ token_info.token }}</td>
+                                                    <td>{{ token_info.priority }}</td>
+                                                    <td>{{ token_info.service_limitation }}</td>
+                                                    <td>STORE</td>
+                                                    <td>{{ token_info.token_security_level }}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    </div>
+                                    
+                                    <!--charts-->
+                                    <div class="col-lg-12 m-t-20" id="heart-charts">
+                                    <div class="col-md-4 p-l-0"> <h4 class="m-t-0 header-title"><b>Battery Usage:</b></h4>
+                                       <div class="portlet"><!-- /primary heading -->
+                            <div class="portlet-heading">
+                                <h3 class="portlet-title text-dark">
+                                    
+                                </h3>
+                                <div class="portlet-widgets">
+                                    <a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>
+                                    <span class="divider"></span>
+                                    <a data-toggle="collapse" data-parent="#accordion1" href="#portlet2"><i class="ion-minus-round"></i></a>
+                                    <span class="divider"></span>
+                                    <a href="#" data-toggle="remove"><i class="ion-close-round"></i></a>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div id="portlet2" class="panel-collapse collapse in">
+                                <div class="portlet-body">
+                                    <div style="height: 320px; text-align:center;">
+                                        {% if node_data.energy_state > 0 and node_data.energy_state < 17 %}
+                                            <img class="image" src="{% static "backend/assets/images/battery/battery-1.png" %}" alt=""/> </div>
+                                        {% elif node_data.energy_state >= 17 and node_data.energy_state < 34 %}
+                                            <img class="image" src="{% static "backend/assets/images/battery/battery-2.png" %}" alt=""/> </div>
+                                        {% elif node_data.energy_state >= 34 and node_data.energy_state < 50 %}
+                                            <img class="image" src="{% static "backend/assets/images/battery/battery-3.png" %}" alt=""/> </div>
+                                        {% elif node_data.energy_state >= 50 and node_data.energy_state < 67 %}
+                                           <img class="image" src="{% static "backend/assets/images/battery/battery-4.png" %}" alt=""/> </div>
+                                        {% elif node_data.energy_state >= 67 and node_data.energy_state < 84 %}
+                                            <img class="image" src="{% static "backend/assets/images/battery/battery-5.png" %}" alt=""/> </div>
+                                        {% elif node_data.energy_state >= 84 %}
+                                        <img class="image" src="{% static "backend/assets/images/battery/battery-full.png" %}" alt=""/> </div>
+                                        {% else %}
+                                         <img class="image" src="{% static "backend/assets/images/battery/battery-0.png" %}" alt=""/> </div>
+                                        {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                                     <div class="col-md-8"> <h4 class="m-t-0 header-title"><b>Heart Rate:</b></h4>
+                                      <div class="portlet"><!-- /primary heading -->
+                            <div class="portlet-heading">
+                                <h3 class="portlet-title text-dark">
+                                    {% if node_data.heart_rate > 100 %}
+                                    {{ node_data.heart_rate }} BPM    心跳過快
+                                    {% elif node_data.heart_rate >= 60 and node_data.heart_rate <= 100 %}
+                                    {{ node_data.heart_rate }} BPM    心跳正常
+                                    {% elif node_data.heart_rate < 60 and node_data.heart_rate > 0%}
+                                    {{ node_data.heart_rate }} BPM    心跳過緩
+                                    {% else %}
+                                       N/A BPM
+                                    {% endif %}
+                                </h3>
+                                <div class="portlet-widgets">
+                                    <a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>
+                                    <span class="divider"></span>
+                                    <a data-toggle="collapse" data-parent="#accordion1" href="#portlet2"><i class="ion-minus-round"></i></a>
+                                    <span class="divider"></span>
+                                    <a href="#" data-toggle="remove"><i class="ion-close-round"></i></a>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div id="portlet2" class="panel-collapse collapse in">
+                                <div class="portlet-body">
+                                    <div id="flotRealTime" style="height: 320px;" class="flot-chart"></div>
+                                </div>
+                            </div>
+                        </div>
+                                     
+                                     </div>
+                                    </div>
+                                    <!--////charts end-->
+                                    
+                                    
+                                    </div>
+                                    </p>
+                                    
+                                    
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>  <!-- end row -->
+
+
+
+
+                 <!-- Footer -->
+                <footer class="footer text-right">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                2016 © ITLab-IoT team | NCKU.
+                            </div>
+                            <div class="col-xs-6">
+                                <ul class="pull-right list-inline m-b-0">
+                                    
+                                    <li>
+                                        <i class="fa fa-envelope-o"></i> steven.ncku@gmail.com
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End Footer -->
+
+            </div> <!-- end container -->
+        </div>
+        <!-- End wrapper -->
+
+
+
+        <!-- jQuery  -->
+        <script src="{% static "backend/assets/js/jquery.min.js" %}"></script>
+        <script src="{% static "backend/assets/js/bootstrap.min.js" %}"></script>
+        <script src="{% static "backend/assets/js/detect.js" %}"></script>
+        <script src="{% static "backend/assets/js/fastclick.js" %}"></script>
+        <script src="{% static "backend/assets/js/jquery.slimscroll.js" %}"></script>
+        <script src="{% static "backend/assets/js/jquery.blockUI.js" %}"></script>
+        <script src="{% static "backend/assets/js/waves.js" %}"></script>
+        <script src="{% static "backend/assets/js/wow.min.js" %}"></script>
+        <script src="{% static "backend/assets/js/jquery.nicescroll.js" %}"></script>
+        <script src="{% static "backend/assets/js/jquery.scrollTo.min.js" %}"></script>
+
+        <script src="{% static "backend/assets/js/jquery.core.js" %}"></script>
+        <script src="{% static "backend/assets/js/jquery.app.js" %}"></script>
+
+        <!-- Flot Chart -->
+        <script src="{% static "backend/assets/plugins/flot-chart/jquery.flot.js" %}"></script>
+        <script src="{% static "backend/assets/plugins/flot-chart/jquery.flot.time.js" %}"></script>
+        <script src="{% static "backend/assets/plugins/flot-chart/jquery.flot.tooltip.min.js" %}"></script>
+        <script src="{% static "backend/assets/plugins/flot-chart/jquery.flot.resize.js" %}"></script>
+        <script src="{% static "backend/assets/plugins/flot-chart/jquery.flot.pie.js" %}"></script>
+        <script src="{% static "backend/assets/plugins/flot-chart/jquery.flot.selection.js" %}"></script>
+        <script src="{% static "backend/assets/plugins/flot-chart/jquery.flot.stack.js" %}"></script>
+        <script src="{% static "backend/assets/plugins/flot-chart/jquery.flot.orderBars.min.js" %}"></script>
+        <script src="{% static "backend/assets/plugins/flot-chart/jquery.flot.crosshair.js" %}"></script>
+        <script src="{% static "backend/assets/pages/jquery.flot.init.js" %}"></script>
+
+    </body>
+</html>
